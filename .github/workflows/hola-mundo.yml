@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clonar repo
-        uses: actions/Checkout@v3
+        uses: actions/Checkout@v5
       - name: Instalar Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: '3.x'
       - name: Ejecutar main
         run: python3 main.py
