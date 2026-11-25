@@ -1,8 +1,5 @@
 name: Hola mundo workflow
-on:
-  push:
-    branches:
-      - aprendiendo-github-actions
+on: [push]
 
 jobs:
   ejecutar_main:
@@ -11,6 +8,9 @@ jobs:
     steps:
       - name: Clonar repo
         uses: actions/Checkout@v3
+      - name: Instalar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
       - name: Ejecutar main
-        run:
-          echo "python3 main.py"
+        run: python3 main.py
