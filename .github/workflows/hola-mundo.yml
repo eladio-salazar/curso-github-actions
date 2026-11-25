@@ -1,0 +1,16 @@
+name: Hola mundo workflow
+on:
+  push:
+    branches:
+      - aprendiendo-github-actions
+
+jobs:
+  ejecutar_main:
+    name: Ejecutar main
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repo
+        uses: actions/Checkout@v3
+      - name: Ejecutar main
+        run:
+          echo "python3 main.py"
